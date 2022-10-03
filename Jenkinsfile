@@ -7,7 +7,7 @@ pipeline {
 			steps {
 				echo 'Hello World!'
 				echo 'Zeeshan 3'
-				sh 'echo printing $testEnvVar'
+				sh 'echo printing $testEnvVar nice yaar'
 			}
 		}
 	}
