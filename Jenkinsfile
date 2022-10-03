@@ -3,10 +3,9 @@ pipeline {
 		dockerfile true
 	}
 	stages {
-		stage('Example') {
+		stage('Build') {
 			steps {
-				echo 'Hello World!'
-				echo 'Zeeshan 3'
+				sh 'php --version'				
 				sh 'echo printing $testEnvVar nice yaar'
 			}
 		}
