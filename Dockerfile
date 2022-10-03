@@ -1,5 +1,4 @@
 # Base image
-FROM ubuntu
+FROM php:8.0-fpm
 
-RUN /bin/bash
-ENV testEnvVar="This is a smaple env var by Zeeshan"
+ENV testEnvVar="php laravel"
