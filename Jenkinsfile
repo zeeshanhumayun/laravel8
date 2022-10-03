@@ -16,6 +16,7 @@ pipeline {
 		}
 		stage('Deploy') {            
             steps {
+            	sh 'whoami'
             	sh 'sudo cp -r /var/lib/jenkins/workspace/laravel/.  /var/www/zeeshan1/html'
             }
         }
