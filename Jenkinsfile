@@ -18,7 +18,7 @@ pipeline {
             steps {
             	sh 'whoami'
             	sh 'echo ${WORKSPACE}'
-            	sh 'cp -r /var/lib/jenkins/workspace/laravel/.  /var/www/zeeshan1/html'
+            	sh 'cp -r ${WORKSPACE}/.  /var/www/zeeshan1/html'
             }
         }
 	}
