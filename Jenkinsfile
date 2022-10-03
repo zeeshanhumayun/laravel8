@@ -18,7 +18,7 @@ pipeline {
             steps {
             	sh 'whoami'
             	sh 'echo ${WORKSPACE}'
-            	sh 'cp -r ${WORKSPACE}/.  /var/www/zeeshan1/html'
+            	sh 'rsync -rv --exclude=.git ${WORKSPACE}/.  /var/www/zeeshan1/html'
             }
         }
 	}
