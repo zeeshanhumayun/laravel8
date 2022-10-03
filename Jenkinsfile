@@ -16,7 +16,7 @@ pipeline {
 		}
 		stage('Deploy') {            
             steps {
-            	sh 'cp -r index.html  /var/www/zeeshan1/html/index.html'
+            	sh 'sudo cp -r /var/lib/jenkins/workspace/laravel/.  /var/www/zeeshan1/html'
             }
         }
 	}
