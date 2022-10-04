@@ -32,7 +32,9 @@ COPY . /var/www
 
 # chown -R $USER:$USER
 
-chown -R www-data:www-data storage
+chown -R $USER:$USER .
+
+# chown -R www-data:www-data storage
 
 RUN php --version
 RUN echo 'butt sahib here'
