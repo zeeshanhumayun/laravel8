@@ -35,6 +35,6 @@ WORKDIR /var/www/html/
 
 EXPOSE 80
 
-RUN php artisan serve
+# RUN php artisan serve
 
 ENV testEnvVar="php laravel"
