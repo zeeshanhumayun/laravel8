@@ -25,10 +25,10 @@ COPY . /var/www/html
 
 RUN php --version
 RUN echo 'butt sahib here'
-#sh 'composer install'
-#sh 'composer --version'
-#sh 'echo printing $testEnvVar nice yaar'
-#sh 'cp .env.example .env'
-#sh 'php artisan key:generate'	
+RUN composer install
+RUN composer --version
+RUN echo 'printing $testEnvVar nice yaar'
+RUN cp .env.example .env
+RUN php artisan key:generate
 
 ENV testEnvVar="php laravel"
