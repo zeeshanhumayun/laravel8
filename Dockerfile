@@ -23,7 +23,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY . /var/www/html
 
-sh 'php --version'					
+RUN php --version
+RUN echo 'butt sahib here'
 #sh 'composer install'
 #sh 'composer --version'
 #sh 'echo printing $testEnvVar nice yaar'
