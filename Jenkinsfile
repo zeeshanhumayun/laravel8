@@ -7,7 +7,7 @@ pipeline {
 			}
 			steps {
 				sh 'php --version'	
-				sh 'sudo chown -R $USER ~/.composer/'			
+				//sh 'sudo chown -R $USER ~/.composer/'			
 				sh 'composer install'
                 sh 'composer --version'
 				sh 'echo printing $testEnvVar nice yaar'
