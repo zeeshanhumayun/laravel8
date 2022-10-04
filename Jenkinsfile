@@ -2,6 +2,12 @@ pipeline {
 	agent any
 	stages {
 		stage('Build') {
+			environment {
+                DB_HOST = credentials("laravel-host")
+                DB_DATABASE = credentials("laravel-database")
+                DB_USERNAME = credentials("laravel-user")
+                DB_PASSWORD = credentials("laravel-password")
+            }
 			agent {
 				dockerfile true
 			}
@@ -12,7 +18,12 @@ pipeline {
                 sh 'composer --version'
 				sh 'echo printing $testEnvVar nice yaar'
 				sh 'cp .env.example .env'
-				sh 'php artisan key:generate'				
+				sh 'echo DB_HOST=${DB_HOST} >> .env'
+                sh 'echo DB_USERNAME=${DB_USERNAME} >> .env'
+                sh 'echo DB_DATABASE=${DB_DATABASE} >> .env'
+                sh 'echo DB_PASSWORD=${DB_PASSWORD} >> .env'
+				sh 'php artisan key:generate'	
+				sh 'php artisan migrate'			
 			}
 		}
 		stage('Deploy') {            
