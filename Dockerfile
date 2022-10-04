@@ -23,4 +23,11 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY . /var/www/html
 
+sh 'php --version'					
+#sh 'composer install'
+#sh 'composer --version'
+#sh 'echo printing $testEnvVar nice yaar'
+#sh 'cp .env.example .env'
+#sh 'php artisan key:generate'	
+
 ENV testEnvVar="php laravel"
