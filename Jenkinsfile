@@ -2,12 +2,12 @@ pipeline {
 	agent any
 	stages {
 		stage('Build') {
+
 			agent {
 				dockerfile true
 			}
 			steps {
-				sh 'php --version'	
-				//sh 'sudo chown -R $USER ~/.composer/'			
+				sh 'php --version'					
 				sh 'composer install'
                 sh 'composer --version'
 				sh 'echo printing $testEnvVar nice yaar'
