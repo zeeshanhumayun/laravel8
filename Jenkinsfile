@@ -8,7 +8,7 @@ pipeline {
 			//}
 			steps {
 				sh 'echo new jenkins'
-				sh 'docker build -f -t hello_laravel_docker_image'
+				sh 'docker build -t hello_laravel_docker_image .'
 				//sh 'php --version'					
 				//sh 'composer install'
                 //sh 'composer --version'
@@ -17,7 +17,7 @@ pipeline {
 				//sh 'php artisan key:generate'				
 			}
 		}
-		stage('Deploy') {            
+		stage('Run') {            
             steps {
             	sh 'whoami'
             	sh 'echo ${WORKSPACE}'
