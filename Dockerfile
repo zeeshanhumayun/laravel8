@@ -34,6 +34,8 @@ COPY . /var/www
 
 chown -R $USER:$USER .
 
+chmod -R 775 storage
+
 # chown -R www-data:www-data storage
 
 RUN php --version
