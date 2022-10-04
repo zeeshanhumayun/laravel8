@@ -15,7 +15,7 @@ services:
       - ./:/var/www
     networks:
       - travellist
-   nginx:
+  nginx:
     image: nginx:alpine
     container_name: travellist-nginx
     restart: unless-stopped
