@@ -31,4 +31,10 @@ RUN echo 'printing $testEnvVar nice yaar'
 RUN cp .env.example .env
 RUN php artisan key:generate
 
+WORKDIR /var/www/html/
+
+EXPOSE 80
+
+RUN php artisan serve
+
 ENV testEnvVar="php laravel"
