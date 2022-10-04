@@ -25,7 +25,7 @@ COPY . /var/www/html
 
 RUN php --version
 RUN echo 'butt sahib here'
-RUN composer install
+# RUN composer install
 RUN composer --version
 RUN echo 'printing $testEnvVar nice yaar'
 RUN cp .env.example .env
