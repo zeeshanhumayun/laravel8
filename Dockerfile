@@ -1,8 +1,6 @@
 # Base image
 FROM php:8.1-fpm
 
-USER root
-
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
@@ -49,3 +47,5 @@ RUN cp .env.example .env
 RUN php artisan key:generate
 
 WORKDIR /var/www
+
+USER root
