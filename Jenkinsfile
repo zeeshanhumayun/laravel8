@@ -15,7 +15,7 @@ pipeline {
 				//sh 'echo printing $testEnvVar nice yaar'
 				//sh 'cp .env.example .env'
 				//sh 'php artisan key:generate'				
-				sh ' docker compose down -d'
+				sh ' docker compose down'
 				sh 'docker-compose up -d'
 			}
 		}
