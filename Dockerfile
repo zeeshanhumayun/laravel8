@@ -28,6 +28,8 @@ RUN mkdir -p /home/$user/.composer && \
 
 RUN chown -R www-data:www-data /var/www
 
+COPY . /var/www
+
 RUN php --version
 RUN echo 'butt sahib here'
 RUN composer install
