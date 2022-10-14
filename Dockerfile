@@ -34,7 +34,7 @@ RUN chown -R www-data:www-data /var/www
 
 COPY . /var/www
 
-# chown -R $USER:$USER
+RUN chown -R $USER:$USER
 
 RUN chown -R $USER:$USER .
 
