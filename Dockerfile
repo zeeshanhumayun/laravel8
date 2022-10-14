@@ -45,8 +45,3 @@ USER $user
 
 RUN php --version
 RUN echo 'butt sahib here'
-RUN composer install
-RUN composer --version
-RUN echo 'printing $testEnvVar nice yaar'
-RUN cp .env.example .env
-RUN php artisan key:generate
