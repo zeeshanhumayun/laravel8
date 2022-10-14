@@ -38,7 +38,7 @@ RUN chown -R www-data:www-data /var/www
 
 RUN chown -R $USER:$USER .
 
-RUN chmod -R 775 storage
+RUN chmod -R 755 /var/www/storage
 
 # RUN chown -R www-data:www-data storage
 
