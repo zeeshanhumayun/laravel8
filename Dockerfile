@@ -1,6 +1,10 @@
 # Base image
 FROM php:8.1-fpm
 
+# Arguments defined in docker-compose.yml
+ARG user
+ARG uid
+
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
@@ -22,9 +26,9 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Create system user to run Composer and Artisan Commands
-# RUN useradd -G www-data,root -u $uid -d /home/$user $user
-# RUN mkdir -p /home/$user/.composer && \
-#    chown -R $user:$user /home/$user
+RUN useradd -G www-data,root -u $uid -d /home/$user $user
+RUN mkdir -p /home/$user/.composer && \
+   chown -R $user:$user /home/$user
 
 RUN chown -R www-data:www-data /var/www
 
@@ -34,11 +38,12 @@ COPY . /var/www
 
 RUN chown -R $USER:$USER .
 
-RUN chmod -R 775 storage
+# RUN chmod -R 775 storage
 
-RUN chown -R www-data:www-data storage
+# RUN chown -R www-data:www-data storage
 
 WORKDIR /var/www
+USER $user
 
 RUN php --version
 RUN echo 'butt sahib here'
@@ -47,7 +52,3 @@ RUN composer --version
 RUN echo 'printing $testEnvVar nice yaar'
 RUN cp .env.example .env
 RUN php artisan key:generate
-
-
-
-USER root
