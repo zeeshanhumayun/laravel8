@@ -32,7 +32,7 @@ RUN mkdir -p /home/$user/.composer && \
 
 RUN chown -R www-data:www-data /var/www
 
-COPY . /var/www
+COPY --chown=33:33 . /var/www
 
 RUN chown -R www-data:www-data /var/www
 
