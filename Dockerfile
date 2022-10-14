@@ -38,6 +38,8 @@ RUN chown -R $USER:$USER .
 
 # chown -R www-data:www-data storage
 
+WORKDIR /var/www
+
 RUN php --version
 RUN echo 'butt sahib here'
 RUN composer install
@@ -46,6 +48,6 @@ RUN echo 'printing $testEnvVar nice yaar'
 RUN cp .env.example .env
 RUN php artisan key:generate
 
-WORKDIR /var/www
+
 
 USER root
