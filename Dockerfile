@@ -36,15 +36,15 @@ ADD . /var/www
 
 WORKDIR /var/www
 
+USER $user
+
 RUN chown -R www-data:www-data /var/www
 
-# RUN chown -R $USER:$USER .
+RUN chown -R $USER:$USER .
 
-# RUN chmod -R 755 /var/www/storage
+RUN chmod -R 755 /var/www/storage
 
-# RUN chown -R www-data:www-data storage
-
-USER $user
+RUN chown -R www-data:www-data storage
 
 RUN php --version
 RUN echo 'butt sahib here'
