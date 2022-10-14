@@ -34,9 +34,9 @@ COPY . /var/www
 
 RUN chown -R $USER:$USER .
 
-# RUN chmod -R 775 storage
+RUN chmod -R 775 storage
 
-# chown -R www-data:www-data storage
+RUN chown -R www-data:www-data storage
 
 WORKDIR /var/www
 
