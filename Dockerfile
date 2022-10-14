@@ -32,17 +32,18 @@ RUN mkdir -p /home/$user/.composer && \
 
 RUN chown -R www-data:www-data /var/www
 
-COPY --chown=33:33 . /var/www
+ADD . /var/www
+
+WORKDIR /var/www
 
 RUN chown -R www-data:www-data /var/www
 
-RUN chown -R $USER:$USER .
+# RUN chown -R $USER:$USER .
 
-RUN chmod -R 755 /var/www/storage
+# RUN chmod -R 755 /var/www/storage
 
 # RUN chown -R www-data:www-data storage
 
-WORKDIR /var/www
 USER $user
 
 RUN php --version
