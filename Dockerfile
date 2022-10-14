@@ -32,9 +32,9 @@ COPY . /var/www
 
 # chown -R $USER:$USER
 
-chown -R $USER:$USER .
+CHOWN -R $USER:$USER .
 
-chmod -R 775 storage
+CHOWN -R 775 storage
 
 # chown -R www-data:www-data storage
 
